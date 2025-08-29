@@ -1,0 +1,66 @@
+import { type ComponentProps } from "react";
+
+import { cva, type VariantProps } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
+const inputVariants = cva(
+  cn(
+    "border-gray-200 text-gray-900 transition-[box-shadow]",
+    "placeholder:text-gray-500",
+    "disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-200",
+    "focus-visible:outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
+  ),
+  {
+    variants: {
+      size: {
+        xs: "body02M h-8 px-2 rounded-sm",
+        sm: "body02M h-8 px-4 rounded-sm",
+        md: "body02M h-10 px-4 rounded-md",
+        lg: "body01M h-12 px-4 rounded-lg",
+        xl: "body01M h-14 px-10 rounded-lg",
+      },
+      shape: {
+        box: "border",
+        line: "border-b px-0 rounded-none disabled:border-dashed disabled:bg-white",
+      },
+      align: {
+        left: "text-left",
+        right: "text-right",
+      },
+      isError: {
+        true: "border-red-500 focus:border-red-500",
+        false: "",
+      },
+    },
+    defaultVariants: {
+      size: "md",
+      shape: "box",
+      align: "left",
+      isError: false,
+    },
+  }
+);
+
+interface InputProps
+  extends Omit<ComponentProps<"input">, "size">,
+    VariantProps<typeof inputVariants> {}
+
+function Input({
+  size,
+  shape,
+  align,
+  isError,
+  className,
+  ...props
+}: InputProps) {
+  return (
+    <input
+      className={cn(inputVariants({ size, shape, align, isError, className }))}
+      {...props}
+    />
+  );
+}
+
+export { Input };
+export type { InputProps };

@@ -1,0 +1,363 @@
+@import url("/fonts/pretendard/pretendard.css");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --default-font-family: var(--primary-font-fmaily);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  --chart-1: #4d73ff;
+  --chart-2: #b166e5;
+  --chart-3: #1532d9;
+  --chart-4: #6658c3;
+  --chart-5: #395bb3;
+  --chart-6: #2581b2;
+  --chart-7: #3f8888;
+  --chart-8: #428c45;
+  --chart-9: #638318;
+  --chart-10: #447b36;
+  --font-black: 900;
+  --font-bold: 700;
+  --font-medium: 400;
+  --font-regular: 200;
+  --primary-font-fmaily: Pretendard;
+
+  --ring: var(--color-ring);
+}
+
+@layer base {
+  html,
+  body {
+    @apply h-full;
+  }
+}
+
+@theme {
+  --color-ring: rgb(161, 161, 161);
+
+  --color-primary-100: #ff94a9;
+  --color-primary-200: #ff7a94;
+  --color-primary-300: #ff617f;
+  --color-primary-400: #ff476a;
+  --color-primary-500: #ff2d55;
+  --color-primary-600: #f91a45;
+  --color-primary-700: #ed0c38;
+  --color-primary-800: #d01136;
+  --color-primary-900: #b31433;
+
+  --color-gray-100: #fafafa;
+  --color-gray-200: #eeeeee;
+  --color-gray-300: #dddddd;
+  --color-gray-400: #bbbbbb;
+  --color-gray-500: #999999;
+  --color-gray-600: #777777;
+  --color-gray-700: #555555;
+  --color-gray-800: #333333;
+  --color-gray-900: #111111;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-gray-dimmed-effect-black-100D: rgba(0, 0, 0, 1);
+  --color-gray-dimmed-effect-black-95D: rgba(0, 0, 0, 0.95);
+  --color-gray-dimmed-effect-black-90D: rgba(0, 0, 0, 0.9);
+  --color-gray-dimmed-effect-black-85D: rgba(0, 0, 0, 0.85);
+  --color-gray-dimmed-effect-black-80D: rgba(0, 0, 0, 0.8);
+  --color-gray-dimmed-effect-black-75D: rgba(0, 0, 0, 0.75);
+  --color-gray-dimmed-effect-black-70D: rgba(0, 0, 0, 0.7);
+  --color-gray-dimmed-effect-black-65D: rgba(0, 0, 0, 0.65);
+  --color-gray-dimmed-effect-black-60D: rgba(0, 0, 0, 0.6);
+  --color-gray-dimmed-effect-black-55D: rgba(0, 0, 0, 0.55);
+  --color-gray-dimmed-effect-black-50D: rgba(0, 0, 0, 0.5);
+  --color-gray-dimmed-effect-black-45D: rgba(0, 0, 0, 0.45);
+  --color-gray-dimmed-effect-black-40D: rgba(0, 0, 0, 0.4);
+  --color-gray-dimmed-effect-black-35D: rgba(0, 0, 0, 0.35);
+  --color-gray-dimmed-effect-black-30D: rgba(0, 0, 0, 0.3);
+  --color-gray-dimmed-effect-black-25D: rgba(0, 0, 0, 0.25);
+  --color-gray-dimmed-effect-black-20D: rgba(0, 0, 0, 0.2);
+  --color-gray-dimmed-effect-black-15D: rgba(0, 0, 0, 0.15);
+  --color-gray-dimmed-effect-black-10D: rgba(0, 0, 0, 0.1);
+  --color-gray-dimmed-effect-black-05D: rgba(0, 0, 0, 0.05);
+  --color-gray-dimmed-effect-black-00D: rgba(0, 0, 0, 0);
+
+  --color-green-100: #72ee90;
+  --color-green-200: #5fe781;
+  --color-green-300: #4edf72;
+  --color-green-400: #3fd564;
+  --color-green-500: #34c759;
+  --color-green-600: #34ad52;
+  --color-green-700: #33944b;
+  --color-green-800: #317d44;
+  --color-green-900: #2d673c;
+
+  --color-blue-100: #66afff;
+  --color-blue-200: #4da2ff;
+  --color-blue-300: #3395ff;
+  --color-blue-400: #1a87ff;
+  --color-blue-500: #007aff;
+  --color-blue-600: #066ee0;
+  --color-blue-700: #1462b8;
+  --color-blue-800: #16569c;
+  --color-blue-900: #174a82;
+
+  --color-indigo-100: #9f9ef5;
+  --color-indigo-200: #8c8aef;
+  --color-indigo-300: #7a78e8;
+  --color-indigo-400: #6967e0;
+  --color-indigo-500: #5856d6;
+  --color-indigo-600: #4a48cb;
+  --color-indigo-700: #3f3dbd;
+  --color-indigo-800: #3e3da4;
+  --color-indigo-900: #3c3b8c;
+
+  --color-red-100: #ff9a94;
+  --color-red-200: #ff817a;
+  --color-red-300: #ff6961;
+  --color-red-400: #ff5147;
+  --color-red-500: #ff3b30;
+  --color-red-600: #f9261a;
+  --color-red-700: #ed190c;
+  --color-red-800: #d01b11;
+  --color-red-900: #b31c14;
+
+  --color-orange-100: #ffbf66;
+  --color-orange-200: #ffb54d;
+  --color-orange-300: #ffaa33;
+  --color-orange-400: #ffa01a;
+  --color-orange-500: #ff9500;
+  --color-orange-600: #e08506;
+  --color-orange-700: #c2750a;
+  --color-orange-800: #a5660d;
+  --color-orange-900: #8a570f;
+
+  --color-data-01: #464f69;
+  --color-data-02: #af52de;
+  --color-data-03: #5856d6;
+  --color-data-04: #007aff;
+  --color-data-05: #5ac8fa;
+  --color-data-06: #34c759;
+  --color-data-07: #8ad74e;
+  --color-data-08: #ffcc00;
+  --color-data-09: #ff9500;
+  --color-data-10: #ff3b30;
+
+  --color-plus-100: #ff9a94;
+  --color-plus-200: #ff817a;
+  --color-plus-300: #ff6961;
+  --color-plus-400: #ff5147;
+  --color-plus-500: #ff3b30;
+  --color-plus-600: #f9261a;
+  --color-plus-700: #ed190c;
+  --color-plus-800: #d01b11;
+  --color-plus-900: #b31c14;
+
+  --color-minus-100: #66afff;
+  --color-minus-200: #4da2ff;
+  --color-minus-300: #3395ff;
+  --color-minus-400: #1a87ff;
+  --color-minus-500: #007aff;
+  --color-minus-600: #066ee0;
+  --color-minus-700: #1462b8;
+  --color-minus-800: #16569c;
+  --color-minus-900: #174a82;
+
+  --shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+@utility display01B {
+  font-weight: var(--font-bold);
+  font-size: 72px;
+  line-height: 150%;
+  letter-spacing: -1.5px;
+}
+@utility display01M {
+  font-weight: var(--font-medium);
+  font-size: 72px;
+  line-height: 150%;
+  letter-spacing: -1.5px;
+}
+@utility display02B {
+  font-weight: var(--font-bold);
+  font-size: 64px;
+  line-height: 150%;
+  letter-spacing: -1px;
+}
+@utility display02M {
+  font-weight: var(--font-medium);
+  font-size: 64px;
+  line-height: 150%;
+  letter-spacing: -1px;
+}
+@utility display03B {
+  font-weight: var(--font-bold);
+  font-size: 48px;
+  line-height: 150%;
+  letter-spacing: -1px;
+}
+@utility display03BL {
+  font-weight: var(--font-black);
+  font-size: 48px;
+  line-height: 150%;
+  letter-spacing: -0.5px;
+}
+@utility display03M {
+  font-weight: var(--font-medium);
+  font-size: 48px;
+  line-height: 150%;
+  letter-spacing: -0.5px;
+}
+@utility heading01B {
+  font-weight: var(--font-bold);
+  font-size: 40px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility heading01M {
+  font-weight: var(--font-medium);
+  font-size: 40px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility heading01R {
+  font-weight: var(--font-regular);
+  font-size: 40px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility heading02B {
+  font-weight: var(--font-bold);
+  font-size: 32px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility heading02M {
+  font-weight: var(--font-medium);
+  font-size: 32px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility heading02R {
+  font-weight: var(--font-regular);
+  font-size: 32px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility heading03B {
+  font-weight: var(--font-bold);
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility heading03M {
+  font-weight: var(--font-medium);
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility heading03R {
+  font-weight: var(--font-regular);
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility heading04B {
+  font-weight: var(--font-bold);
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility heading04M {
+  font-weight: var(--font-medium);
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility heading04R {
+  font-weight: var(--font-regular);
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility body01B {
+  font-weight: var(--font-bold);
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility body01M {
+  font-weight: var(--font-medium);
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility body01R {
+  font-weight: var(--font-regular);
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility body02B {
+  font-weight: var(--font-bold);
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility body02M {
+  font-weight: var(--font-medium);
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility body02R {
+  font-weight: var(--font-regular);
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility body03B {
+  font-weight: var(--font-bold);
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility body03M {
+  font-weight: var(--font-medium);
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility body03R {
+  font-weight: var(--font-regular);
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility body04B {
+  font-weight: var(--font-bold);
+  font-size: 11px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility body04M {
+  font-weight: var(--font-medium);
+  font-size: 11px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility body04R {
+  font-weight: var(--font-regular);
+  font-size: 11px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@utility body05R {
+  font-weight: var(--font-regular);
+  font-size: 10px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
