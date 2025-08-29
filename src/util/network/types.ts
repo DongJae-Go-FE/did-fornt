@@ -12,11 +12,6 @@ export type CommonResponse<T = unknown> = {
   data: T;
 };
 
-export type WithDataFieldResponse<T> = {
-  datafield: { name: string; type: string }[];
-  rows: T[];
-};
-
 export type REQ_001 = {};
 
-export type RES_001 = WithDataFieldResponse<{}>;
+export type RES_001 = CommonResponse<{}>;
