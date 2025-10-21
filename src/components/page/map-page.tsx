@@ -4,7 +4,7 @@ import Map from "../map";
 
 export default function MapPage() {
   const [mapValue, setMapValue] = useState("서울대교구");
-
+  console.log(mapValue);
   // const renderTable = () => {
   //   switch (mapValue) {
   //     case "서울대교구":
