@@ -1,34 +1,31 @@
-import CountDay from "@/components/count-day";
-
 export default function SliderItem01() {
   return (
     <div className="main-section bg-main relative p-0 overflow-hidden">
-      <CountDay />
       <img
         src="/main/main01.png"
         alt="did 메인이미지 첫번째 성당"
         className="absolute z-10 bottom-0 right-0 max-w-[60dvw] max-h-180 object-cover"
       />
-      <div className="text-white body02r absolute bottom-[30dvh] z-40 pl-8 flex flex-col gap-y-1">
-        <div className="h-[clamp(24px,3dvw,48px)]">
+      <div className="text-white body02r absolute top-[30dvh] z-40 pl-8 flex flex-col gap-y-1">
+        <div className="h-[clamp(36px,6dvw,60px)]">
           <p
-            className="text-[clamp(24px,3dvw,48px)] animate-bottomUp opacity-0"
+            className="text-[clamp(36px,6dvw,60px)] animate-bottomUp opacity-0"
             style={{ animationDelay: "1.2s" }}
           >
             용기를 내어라.
           </p>
         </div>
-        <div className="h-[clamp(24px,3dvw,48px)]">
+        <div className="h-[clamp(36px,6dvw,60px)]">
           <p
-            className="text-[clamp(24px,3dvw,48px)] animate-bottomUp opacity-0"
+            className="text-[clamp(36px,6dvw,60px)] animate-bottomUp opacity-0"
             style={{ animationDelay: "1.8s" }}
           >
             내가 세상을 이겼다.
           </p>
         </div>
-        <div className="h-[clamp(16px,2dvw,24px)]">
+        <div className="h-[clamp(24px,3dvw,36px)]">
           <p
-            className="text-[clamp(16px,2dvw,24px)] animate-bottomUp opacity-0"
+            className="text-[clamp(24px,3dvw,36px)] animate-bottomUp opacity-0"
             style={{ animationDelay: "2.3s" }}
           >
             (요한 16,33)

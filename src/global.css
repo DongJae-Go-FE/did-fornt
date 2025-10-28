@@ -227,8 +227,10 @@
 
   --animate-bottomUp: bottomUp 0.7s ease 1s forwards;
   --animate-fadeIn: fadeIn 2s ease 1s forwards;
+  --animate-fadeIn2: fadeIn2 2s ease 1s forwards;
   --animate-bottomUp2: bottomUp2 0.7s cubic-bezier(0.835, -0.005, 0.06, 1)
     forwards;
+  --animate-pan-zoom: pan-zoom 5s ease-in-out forwards;
 
   --shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
 
@@ -275,12 +277,32 @@
       opacity: 0.75;
     }
   }
+
+  @keyframes fadeIn2 {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
   @keyframes bottomUp2 {
     0% {
       transform: translateY(0);
     }
     100% {
       transform: translateY(-100%);
+    }
+  }
+
+  @keyframes pan-zoom {
+    0% {
+      transform: scale(1) translate(0, 0);
+    }
+    100% {
+      transform: scale(1.2) translate(5%, -5%);
     }
   }
 }
@@ -480,7 +502,7 @@
 }
 
 @utility main-section {
-  @apply max-[727px]:px-[8vw] max-[727px]:py-[30vh] max-[1080px]:px-[10vw] max-[1080px]:py-[20vh] px-[120px] pb-40 relative flex h-[100vh] w-[100vw] flex-col justify-end bg-cover bg-no-repeat;
+  @apply max-[727px]:px-[8vw] max-[727px]:py-[30vh] max-[1080px]:px-[10vw] max-[1080px]:py-[20vh] px-[120px] pb-40 relative flex h-screen w-screen flex-col justify-end bg-cover bg-no-repeat;
   ul {
     @apply max-[727px]:flex-col max-[727px]:gap-y-2 max-[1080px]:flex-col max-[1080px]:gap-y-2 flex-row gap-x-4 flex;
 
@@ -495,7 +517,7 @@
 }
 
 @utility bg-backdrop {
-  @apply absolute top-0 left-0 z-10 h-full w-full backdrop-brightness-75;
+  @apply absolute top-0 left-0 z-10 h-full w-full backdrop-brightness-50;
 }
 
 @utility description-table {

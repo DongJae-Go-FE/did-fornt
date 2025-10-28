@@ -1,7 +1,7 @@
 export default function SliderItem03() {
   return (
     <img
-      src="/main/main03.png"
+      src="/main/main03.jpg"
       alt="did 메인이미지 세번째 메인"
       width={1920}
       height={1080}

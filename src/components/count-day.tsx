@@ -8,7 +8,7 @@ export default function CountDay() {
   const today = new Date();
 
   return (
-    <div className="absolute z-500 top-32 left-8 text-white heading01b text-[clamp(30px,7dvw,130px)]">
+    <div className="text-black heading01b text-[clamp(30px,7dvw,130px)]">
       D -{" "}
       <CountUp
         from={0}

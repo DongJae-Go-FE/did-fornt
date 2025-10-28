@@ -5,7 +5,7 @@ import Map from "../map";
 export default function MapPage() {
   const [mapValue, setMapValue] = useState("서울대교구");
   console.log(mapValue);
-  // const renderTable = () => {
+
   //   switch (mapValue) {
   //     case "서울대교구":
   //       return (
@@ -523,7 +523,6 @@ export default function MapPage() {
       </h2>
       <div className="flex h-[calc(100%-64px)] max-[767px]:h-full gap-x-4 max-[767px]:flex-col max-[767px]:gap-y-4">
         <Map onChangeValue={handleChangeValue} />
-        {/* <div className="flex-1">{renderTable()}</div> */}
       </div>
     </div>
   );

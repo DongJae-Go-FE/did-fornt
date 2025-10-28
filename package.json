@@ -12,7 +12,9 @@
   "dependencies": {
     "@egjs/flicking": "^4.14.1",
     "@egjs/flicking-plugins": "^4.7.1",
+    "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.13",
+    "@types/lodash": "^4.17.20",
     "@types/navermaps": "^3.9.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

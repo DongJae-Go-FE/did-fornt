@@ -10,16 +10,39 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import { cn } from "@/lib/utils";
+
 const SUPPORTED_LANGS = ["kr", "en", "jp", "cn"];
 
 export default function Header() {
   const [value, setValue] = useState("kr");
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const pathname = window.location.pathname;
     const firstSegment = pathname.split("/")[1];
 
     setValue(SUPPORTED_LANGS.includes(firstSegment) ? firstSegment : "kr");
+  }, []);
+
+  useEffect(() => {
+    const targetElement = document.querySelector("#section");
+
+    if (!targetElement) return;
+
+    const handleScroll = () => {
+      const rect = targetElement.getBoundingClientRect();
+      const headerHeight = 120;
+
+      setIsScrolled(rect.top <= headerHeight);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const handleLanguageChange = (lang: string) => {
@@ -37,7 +60,14 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full h-30 text-white flex items-center px-8 fixed top-0 left-0 z-50 justify-between">
+    <header
+      className={cn(
+        "w-full h-30 flex items-center px-8 fixed top-0 left-0 z-5000 justify-between transition- duration-300 ",
+        isScrolled
+          ? "bg-white text-black border-b border-gray-200 shadow-sm"
+          : "bg-transparent text-white border-none"
+      )}
+    >
       <h1>
         <Link to="/">
           <img
@@ -54,7 +84,7 @@ export default function Header() {
         <li>
           <Select value={value} onValueChange={handleLanguageChange}>
             <SelectTrigger
-              className="border-none font-black text-lg bg-b"
+              className="border-none font-black text-lg bg-transparent"
               size="lg"
             >
               <SelectValue className="placeholder:text-white data-placeholder:text-white" />
@@ -76,7 +106,12 @@ export default function Header() {
           </Select>
         </li>
 
-        <li>
+        <li
+          className={cn(
+            "transition-colors duration-500",
+            isScrolled ? "[&_svg_path]:fill-black" : "[&_svg_path]:fill-white"
+          )}
+        >
           <Drawer />
         </li>
       </ul>
