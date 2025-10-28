@@ -1,7 +1,12 @@
 export default function SliderItem02() {
   return (
     <div className="w-full h-full bg-gray-900 overflow-hidden relative">
-      <div className="w-full h-full animate-pan-zoom bg-[url('/main/main02.jpeg')] bg-cover bg-left-bottom" />
+      <div
+        className="w-full h-full animate-pan-zoom bg-cover bg-left-bottom"
+        style={{
+          backgroundImage: "url('/main/main02.jpeg')",
+        }}
+      />
       <div className="text-white heading03b absolute top-[30dvh] z-40 pl-8 flex flex-col gap-y-1 right-[5dvw]">
         <div className="h-[clamp(36px,6dvw,60px)]">
           <p
